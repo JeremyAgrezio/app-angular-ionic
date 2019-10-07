@@ -1,4 +1,4 @@
-## Projet scolaire application Angular/Ionic
+## Projet scolaire d'application Angular/Ionic
 
 L'intégration d'une clé API Google Maps est nécessaire pour les pages src/app/pages/details/details.module.ts et src/app/pages/plan/plan.module.ts.
 
