@@ -2,7 +2,7 @@
 
 **L'intégration d'une clé API Google Maps est nécessaire sur les pages src/app/pages/details/details.module.ts et src/app/pages/plan/plan.module.ts.**
 
-#### Consignes données pour la réalisation :
+#### Consignes données pour la réalisation du projet:
 
 
   •	L'application est faite en Angular/Ionic
