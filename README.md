@@ -1,7 +1,7 @@
 ## Projet scolaire application Angular/Ionic
 
 
-#### Consignes à respecter pour la réalisation :
+#### Consignes pour la réalisation :
 
 
   •	L'application est faite en Angular/Ionic
