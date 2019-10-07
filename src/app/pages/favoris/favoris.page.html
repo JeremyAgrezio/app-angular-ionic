@@ -1,0 +1,74 @@
+<ion-header no-border>
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="favBonsPlans">
+  <ion-grid id="grid">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <H1>Bons plans favoris</H1>  
+      </ion-col>
+    </ion-row>
+    <ion-row id="listing" class="ion-justify-content-center" size-md="6" size-lg="5" size-xs="12">
+      <ion-col class="ion-align-self-center">
+        <ion-list lines="none">
+          <div *ngFor="let bP of favBonsPlans">
+            <ion-card *ngIf="bP.isFav">
+              <ion-card-content class="ion-no-padding">
+                <ion-grid class="ion-no-padding">
+                  <ion-row class="row">
+                    <ion-col size="4" class="ion-text-center ion-align-self-center">
+                        <img class="icone" src="../../../assets/images/paper-plane.png">
+                        <div class="infos">{{bP.name}}</div>
+                    </ion-col>
+                    <ion-col (click)="bonPlanDetails(bP)" class="ion-no-padding">
+                      <div id="vignettes" [ngStyle]="{'background-image': 'url(' + bP.images[0] + ')'}"></div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-list> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="favAppart">
+  <ion-grid id="grid">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <H1>Appartements favoris</H1>  
+      </ion-col>
+    </ion-row>
+    <ion-row id="listing" class="ion-justify-content-center" size-md="6" size-lg="5" size-xs="12">
+      <ion-col class="ion-align-self-center">
+        <ion-list lines="none">
+          <div *ngFor="let appt of favAppart">
+            <ion-card *ngIf="appt.isFav">
+              <ion-card-content class="ion-no-padding">
+                <ion-grid class="ion-no-padding">
+                  <ion-row class="row">
+                    <ion-col size="4" class="ion-text-center ion-align-self-center">
+                      <img class="icone" src="../../../assets/images/paper-plane.png">      
+                      <div class="infos">{{appt.name}}</div>
+                      <div class="infos">{{appt.location}}</div>
+                    </ion-col>
+                    <ion-col (click)="appartDetails(appt)" class="ion-no-padding">
+                      <div id="vignettes" [ngStyle]="{'background-image': 'url(' + appt.images[0] + ')'}"></div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-list> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

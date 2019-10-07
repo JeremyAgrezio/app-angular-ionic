@@ -1,0 +1,113 @@
+<ion-header no-border>
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="this.dataAppart">
+  <app-slides [pager]="true" [options]="slideOpts" [images]="this.dataAppart.images"></app-slides>
+  <ion-grid id="gridAppt">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div class="ion-text-end" > 
+              <ion-checkbox [(ngModel)]="this.dataAppart.isFav" (click)="setFavAppart(this.dataAppart.id)"></ion-checkbox>
+            </div>
+            <div id="description">
+              <ion-text>{{this.dataAppart.description}}</ion-text>
+            </div>       
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row id="details">
+                <ion-col size="7">
+                  <ion-text>Visites sur rendez-vous</ion-text>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <ion-text>{{this.dataAppart.phone}}</ion-text>
+                </ion-col>         
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="iconesDetails">
+      <ion-col class="ion-text-center">
+        <div id="contourIcone">
+          <ion-icon name="cash"></ion-icon>
+        </div>
+        <div class="detailstext">
+          <ion-text>{{this.dataAppart.price}}€</ion-text>
+        </div>  
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <div id="contourIcone">
+          <ion-icon name="resize"></ion-icon> 
+        </div>
+        <div class="detailstext">
+          <ion-text>{{this.dataAppart.area}} M²</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="iconesDetails">
+      <ion-col class="ion-text-center">
+        <div id="contourIcone">
+          <ion-icon name="easel"></ion-icon>
+        </div>
+        <div class="detailstext">
+          <ion-text>{{this.dataAppart.furnitures}}</ion-text>
+        </div>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <div id="contourIcone">
+          <ion-icon name="pin"></ion-icon>
+        </div>
+        <div class="detailstext">
+          <ion-text>Bordeaux {{this.dataAppart.location}}</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row id="map">
+      <agm-map [latitude]="this.dataAppart.latitude" [longitude]="this.dataAppart.longitude" [mapTypeId]='mapType' [zoom]='zoom' [disableDefaultUI]='true' [mapDraggable]='false'>
+        <agm-marker [latitude]="this.dataAppart.latitude" [longitude]="this.dataAppart.longitude"></agm-marker>
+      </agm-map> 
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="this.dataBonPlan">
+  <ion-grid id="gridBP" [ngStyle]="{'background-image': 'url('+ this.dataBonPlan.images[0] +')'}">
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <H1>{{this.dataBonPlan.name}}</H1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div class="ion-text-end" > 
+              <ion-checkbox [(ngModel)]="this.dataBonPlan.isFav" (click)="setFavBonsPlans(this.dataBonPlan.id)"></ion-checkbox>
+            </div>
+            <div id="description">
+              <ion-text>{{this.dataBonPlan.description}}</ion-text>
+            </div>       
+          </ion-card-header>
+          <ion-card-content>  
+            <ion-text>{{this.dataBonPlan.times}}</ion-text>         
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row id="map">
+      <agm-map [latitude]="this.dataBonPlan.latitude" [longitude]="this.dataBonPlan.longitude" [mapTypeId]='mapType' [zoom]='zoom' [disableDefaultUI]='true' [mapDraggable]='false'>
+        <agm-marker [latitude]="this.dataBonPlan.latitude" [longitude]="this.dataBonPlan.longitude"></agm-marker>
+      </agm-map> 
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

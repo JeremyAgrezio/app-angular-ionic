@@ -1,0 +1,40 @@
+ion-content{
+    position: absolute;
+
+    #grid{
+        background-color: #E1E7EA;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        ion-card{
+            margin-top: 10vh;
+            background-color: white;
+            border-radius: 20px;
+
+            ion-card-header{
+                background-color: #c78600;
+
+                h1{
+                    text-transform: uppercase;
+                    color: white;
+                }
+            }    
+            ion-card-content{
+                padding-top: 16px;
+                padding-left: 0;
+                padding-right: 0;
+
+                .avatar{
+                    display: flex;
+                    justify-content: center;  
+                }
+            }    
+        }
+
+        .grow{
+            flex-grow: 1;
+        }
+
+    }    
+}

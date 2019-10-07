@@ -1,0 +1,48 @@
+ion-content{
+    position: absolute;
+
+    #grid{
+        background-size: 100% 30vh;
+        background-repeat: no-repeat;
+        background-color: #E1E7EA;
+        padding: 0 30px;
+    
+        h1{
+            margin-top: 26vh;
+            margin-bottom: 5vh;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        ion-img{
+            position: absolute;
+            top: 150px;
+            left: -40px;
+            right: -30px;
+        }
+
+        ion-list{
+            background-color: transparent;
+
+            ion-card{
+                margin: 0 0 50px 0 !important;
+                background-color: white;
+                border-radius: 20px;
+
+                ion-card-content{
+
+                    .row{
+                        height: 8rem;
+                
+                        #vignettes{
+                            height: 100%;
+                            background-repeat: no-repeat;
+                            background-size: 100% auto;
+                            background-position: center;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}

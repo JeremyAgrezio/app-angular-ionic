@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map [latitude]='latitude' [longitude]='longitude' [mapTypeId]='mapType' [zoom]='zoom'>
+    <div *ngFor="let appt of appartements">
+      <agm-marker [latitude]="appt.latitude" [longitude]="appt.longitude" [label]="'A'">
+        <agm-info-window [disableAutoPan]="false">
+          {{appt.name}}
+        </agm-info-window>
+      </agm-marker>
+    </div>
+    <div *ngFor="let bP of bonsPlans">
+      <agm-marker [latitude]="bP.latitude" [longitude]="bP.longitude" [label]="'B'" [title]="bP.name">
+        <agm-info-window [disableAutoPan]="false">
+         {{bP.name}}
+        </agm-info-window>
+      </agm-marker>
+    </div>
+  </agm-map>
+</ion-content>

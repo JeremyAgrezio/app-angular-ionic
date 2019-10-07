@@ -1,0 +1,6 @@
+<ion-slides pager="{{pager}}" [options]="options">
+  <ion-slide *ngFor="let img of images">
+    <div id="background" [ngStyle]="{'background-image': 'url('+ img +')'}"></div>
+  </ion-slide> 
+</ion-slides>
+<ion-img src="(../../../assets/images/curves_background.png"></ion-img>

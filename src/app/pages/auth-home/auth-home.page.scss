@@ -1,0 +1,15 @@
+ion-grid{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../../assets/images/background_log.jpg');
+
+    ion-img{
+        height: 10vh;
+        margin-top: 20vh;
+    }
+
+}
+.grow{
+    flex-grow: 1;
+}

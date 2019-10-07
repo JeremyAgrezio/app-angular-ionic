@@ -1,0 +1,7 @@
+{
+  "name": "appart-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

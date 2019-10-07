@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid id="grid" [ngStyle]="{'background-image': 'url(../../../assets/images/plan.png)'}">
+    <ion-img src="(../../../assets/images/curves_background.png"></ion-img>
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <H1>Bordeaux</H1>  
+      </ion-col>
+    </ion-row>
+    <ion-row id="listing" class="ion-justify-content-center" size-md="6" size-lg="5" size-xs="12">
+      <ion-col class="ion-align-self-center">
+        <ion-list lines="none">
+          <ion-card *ngFor="let appt of appartements">
+            <ion-card-content class="ion-no-padding">
+              <ion-grid class="ion-no-padding">
+                <ion-row class="row">
+                  <ion-col size="4" class="ion-text-center ion-align-self-center">
+                    <ion-checkbox [(ngModel)]="appt.isFav" (click)="setFav(appt.id)"></ion-checkbox>
+                  </ion-col>
+                  <ion-col (click)="appartDetails(appt)" class="ion-no-padding">
+                    <div id="vignettes" [ngStyle]="{'background-image': 'url(' + appt.images[0] + ')'}"></div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-list> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

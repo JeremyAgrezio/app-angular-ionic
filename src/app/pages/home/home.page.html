@@ -1,0 +1,90 @@
+<ion-header no-border>
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid id="grid" [ngStyle]="{'background-image': 'url(../../../assets/images/bordeaux.jpg)'}">
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <H1>Bordeaux</H1>  
+        <ion-img src="(../../../assets/images/curves_background.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row color="primary" class="ion-justify-content-center">
+      <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+        <ion-searchbar placeholder="Recherche"></ion-searchbar>
+        <ion-list lines="none">
+          <ion-card *ngFor="let bPlan of bonsPlans">
+            <ion-card-content class="ion-no-padding">
+              <ion-grid class="ion-no-padding">
+                <ion-row class="row" >
+                  <ion-col size="4" class="ion-text-center ion-align-self-center">
+                      <img class="icone" src="../../../assets/images/paper-plane.png">
+                      <div class="nom">{{bPlan.name}}</div>            
+                  </ion-col>
+                  <ion-col (click)="bonsPlansDetails(bPlan)" class="ion-no-padding">
+                    <div id="vignettes" [ngStyle]="{'background-image': 'url(' + bPlan.images[0] + ')'}"></div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Bons Plans
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <img src="/assets/shapes.svg" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Get Started</ion-card-subtitle>
+        <ion-card-title>Welcome to Ionic</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Resources</ion-label>
+      </ion-list-header>
+      <ion-item href="https://ionicframework.com/docs/">
+        <ion-icon slot="start" color="medium" name="book"></ion-icon>
+        <ion-label>Ionic Documentation</ion-label>
+      </ion-item>
+      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+        <ion-label>Scaffold Out Your App</ion-label>
+      </ion-item>
+      <ion-item href="https://ionicframework.com/docs/layout/structure">
+        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+        <ion-label>Change Your App Layout</ion-label>
+      </ion-item>
+      <ion-item href="https://ionicframework.com/docs/theming/basics">
+        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+        <ion-label>Theme Your App</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content> -->
